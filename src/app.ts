@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { Router, ROUTER_DIRECTIVES, provideRouter, RouterConfig  } from '@angular/router';
 import { } from '@angular/router';
 
-import { Signup } from './startPage/signup/signup';
-import { Home} from './startPage/signup/home/home';
-import { Login} from './startPage/login/login';
+import { Signup } from './startPage/signup/signup.component';
+import { Home} from './startPage/signup/home/home.component';
+import { Login} from './startPage/login/login.component';
 import { StartPage} from './startPage/start-page.component';
 
 const template = require('./app.html');
