@@ -17,30 +17,45 @@ const template = require('./view/login.html');
 export class Login {
   constructor(public router: Router, public http: Http) {}
   
-  // login(event, email, password) {
-  //   event.preventDefault();
-  //   let body = JSON.stringify({ email, password });
-  //   console.log(body);
-  //   this.http.post('http://localhost:3000/api/v1/auth/loginByEmail', body, { headers: contentHeaders })
-  //   // AuthFactory.login(body)
-  //     .subscribe(
-  //       response => {
-  //         if (response.json().status.success == null) {
-  //           alert('email address or password you entered is not correct');
-  //           console.log('response.json().status.success', response.json().status.success);
-  //         } else {
-  //           console.log(response.json());
-  //           localStorage.setItem('accessToken', response.json().user.accessToken);
-  //           this.router.navigate(['/home']);
-  //           console.log(localStorage.getItem('accessToken'));
-  //         }
-  //       },
-  //       error => {
-  //         alert(error.text());
-  //         console.log(error.text());
-  //       }
-  //     );
-  // }
+  login(event, email, password) {
+    event.preventDefault();
+    let body = JSON.stringify({ email, password });
+    console.log(body);
+    this.http.post('http://localhost:3000/api/v1/auth/loginByEmail', body)
+    // AuthFactory.login(body)
+      .subscribe(
+        response => {
+
+          // if (response.json().status.success == null) {
+          //   alert('email address or password you entered is not correct');
+          //   console.log('response.json().status.success', response.json().status.success);
+          // } else {
+          //   console.log(response.json());
+          //   localStorage.setItem('accessToken', response.json().user.accessToken);
+          //   this.router.navigate(['/home']);
+          //   console.log(localStorage.getItem('accessToken'));
+          // }
+
+          if (response.json().status == "OK") {
+              if (response.json().data.authToken != '') {
+                  localStorage.setItem('authToken', response.json().data.authToken);
+                  this.router.navigate(['/home']);
+              } else {
+                  alert("Invalid user or password");
+              }
+
+          } else if (response.json().status == "RROR:general") {
+              alert("Invalid user or password");
+          }
+
+
+        },
+        error => {
+          alert(error.text());
+          console.log(error.text());
+        }
+      );
+  }
 
   signup(event) {
     event.preventDefault();

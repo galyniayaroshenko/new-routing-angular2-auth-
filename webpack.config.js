@@ -87,6 +87,7 @@ module.exports = {
       { test: /\.html$/,  loader: 'raw-loader' },
 
       { test: /\.scss$/, loader: ExtractTextPlugin.extract('style', 'css!sass' )}
+      // { test: /\.scss$/, loaders: ['style', 'css', 'sass'] }
     ],
     noParse: [
      /zone\.js\/dist\/.+/,

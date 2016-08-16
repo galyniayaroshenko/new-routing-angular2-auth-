@@ -15,7 +15,10 @@
     "src/startPage/signup/index.ts",
     "src/startPage/component/main-start.component.ts",
     "src/startPage/login/index.ts",
-    "src/startPage/signup/home/index.ts"
+    "src/startPage/signup/home/index.ts",
+    "src/common/appSettings.ts",
+    "src/startPage/signup/home/service/authFactory.ts",
+    "src/startPage/signup/home/service/xhrFactory.ts"
   ],
     "filesGlob": [
     "./src/**/*.ts",
