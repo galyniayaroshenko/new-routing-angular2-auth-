@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "commonjs",
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true
+  },
+  "files": [
+    "typings/tsd.d.ts",  
+    "src/app.ts",
+    "src/startPage/index.ts",
+    "src/index.ts",
+    "src/startPage/signup/index.ts",
+    "src/startPage/component/main-start.component.ts",
+    "src/startPage/login/index.ts",
+    "src/startPage/signup/home/index.ts"
+  ],
+    "filesGlob": [
+    "./src/**/*.ts",
+    "!./node_modules/**/*.ts"
+  ],
+  "compileOnSave": false,
+  "buildOnSave": false,
+  "atom": { "rewriteTsconfig": true }
+}

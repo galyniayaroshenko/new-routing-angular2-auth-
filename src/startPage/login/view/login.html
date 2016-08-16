@@ -1,0 +1,23 @@
+<form role="form" (submit)="login($event, email.value, password.value)">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Login
+                </div>
+                <div class="panel-body">
+                    
+                    <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="text" #email class="form-control" id="email" placeholder="Email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="control-label" for="password">Password</label>
+                        <input class="form-control" type="password" id="password" ngControl="password" #password="ngForm" placeholder="Password" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-default">Submit</button>
+                    <a [routerLink]="['/signup']">Click here to Signup</a>
+                    
+                </div>
+            </div>
+</form>
